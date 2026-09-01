@@ -26,7 +26,7 @@ def generating_prompt(user_data : dict) -> str:
             Name: {user_data["name"]}
             Age: {user_data["age"]}
             Gender: {user_data["gender"]}
-            Height: {user_data["height"]} inches
+            Height: {user_data["height"]} feet and inches
             Weight: {user_data["weight"]} kg
 
             WORKOUT PREFERENCES
