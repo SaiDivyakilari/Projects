@@ -1,0 +1,30 @@
+# LLM / orchestration
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-huggingface
+langchain-qdrant
+langchain-classic
+
+
+# Vector store + embeddings
+qdrant-client
+fastembed
+sentence-transformers
+
+# Document parsing
+docling
+docling-hierarchical-pdf
+
+# Backend
+fastapi
+uvicorn[standard]
+
+# Utilities
+python-dotenv
+pandas
+requests
+streamlit
+
+

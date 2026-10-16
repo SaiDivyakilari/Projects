@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+qdrant_storage/
+.docling_cache/
+node_modules/
+.next/
+.DS_Store
+# Qdrant local-mode lock files and scratch stores from the notebooks
+*.lock
+Scripts/qdrant/
+Scripts/qdrant2/
