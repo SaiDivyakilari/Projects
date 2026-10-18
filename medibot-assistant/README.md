@@ -45,14 +45,14 @@ medibot-assistant/
 ├── app/
 │   ├── config.py           # paths, model names, retrieval limits, ROLES access matrix
 │   ├── ingestion.py        # Docling parse → HybridChunker → dense + sparse vectors → Qdrant
-│   ├── retreival.py        # hybrid query with RBAC filter, relevance gate, cross-encoder rerank
+│   ├── retrieval.py        # hybrid query with RBAC filter, relevance gate, cross-encoder rerank
 │   ├── generation.py       # builds the prompt from reranked chunks, calls the LLM, returns sources
 │   ├── Text_to_SQL_RAG.py  # sql_rag_chain(question) -> str
 │   ├── auth.py             # demo users, token sessions, collections_for(role)
 │   ├── main.py             # FastAPI app: /login, /chat, /collections/{role}, /health
 │   └── Verify.py           # prints chunk counts per collection and per role
 ├── Data/                   # source documents (one folder per collection) + db/mediassist.db
-├── qudrant_client/         # local Qdrant storage (created by ingestion)
+├── qdrant_client/         # local Qdrant storage (created by ingestion)
 ├── streamlit_app.py        # frontend
 └── requirements.txt
 ```
@@ -94,7 +94,7 @@ python -m app.Verify            # optional: check chunk counts per collection an
 
 The first run downloads the Docling, embedding and BM25 models, so it can take several minutes. Ingestion rebuilds the `mediassist` collection from scratch every time it runs.
 
-> Qdrant runs in local (embedded) mode, so only one process can open `qudrant_client/` at a time. Stop the backend before re-running ingestion.
+> Qdrant runs in local (embedded) mode, so only one process can open `qdrant_client/` at a time. Stop the backend before re-running ingestion.
 
 ### 5. Run the backend
 
@@ -164,7 +164,7 @@ Example `/chat` response:
 - **Metadata on every chunk:** `source_document`, `collection` (the folder name), `access_roles` (looked up from `ROLES` in `config.py`), `section_title` (the deepest heading), `chunk_type` (`text`, `table`, `heading` or `code`, taken from the Docling item label) and `page`.
 - **Indexing:** each point stores a named `dense` vector (cosine distance) and a named `sparse` BM25 vector (with the IDF modifier). Payload indexes on `access_roles` and `collection` let Qdrant apply the filter during the search itself.
 
-### 2. Hybrid retrieval (`app/retreival.py`)
+### 2. Hybrid retrieval (`app/retrieval.py`)
 
 A single `query_points` call does the following:
 

@@ -15,7 +15,7 @@ CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 LLM_MODEL = "openai/gpt-oss-20b" 
 
 # Define the path for the Qdrant client and the collection name
-QUDRANT_CLIENT_PATH = BASE_DIR / 'qudrant_client'
+QDRANT_CLIENT_PATH = BASE_DIR / 'qdrant_client'
 COLLECTION_NAME = "mediassist"
 
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -24,7 +24,7 @@ from qdrant_client import QdrantClient
 
 DENSE_EMBEDDINGS = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
 SPARSE_EMBEDDINGS = FastEmbedSparse(model_name=SPARSE_MODEL)
-QDRANT_CLIENT = QdrantClient(path=str(QUDRANT_CLIENT_PATH))
+QDRANT_CLIENT = QdrantClient(path=str(QDRANT_CLIENT_PATH))
 
 # LLM model configuration
 LLM_MODEL_CONFIG = {

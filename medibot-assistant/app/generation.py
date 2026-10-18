@@ -1,5 +1,5 @@
 from app.config import *
-from app.retreival import Retrieval
+from app.retrieval import Retrieval
 
 from langchain_groq import ChatGroq
 

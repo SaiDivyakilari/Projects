@@ -11,3 +11,4 @@ node_modules/
 *.lock
 Scripts/qdrant/
 Scripts/qdrant2/
+qdrant_client/

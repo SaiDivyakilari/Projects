@@ -1,8 +1,8 @@
 
 from qdrant_client import QdrantClient, models
-from app.config import COLLECTION_NAME, QUDRANT_CLIENT_PATH ,  ROLES
+from app.config import COLLECTION_NAME, QDRANT_CLIENT_PATH ,  ROLES
 
-client = QdrantClient(path=str(QUDRANT_CLIENT_PATH ))
+client = QdrantClient(path=str(QDRANT_CLIENT_PATH ))
 
 print(client.count(COLLECTION_NAME).count)
 
