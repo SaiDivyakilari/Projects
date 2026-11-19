@@ -51,7 +51,8 @@ Northwind-Bank/
 ├── docs/
 │   ├── SETUP.md
 │   ├── ARCHITECTURE.md
-│   └── DEPLOYMENT.md
+│   ├── DEPLOYMENT.md
+│   └── IMPLEMENTATION_ORDER.md
 │
 ├── .env                        gitignored
 ├── .env.example
@@ -71,7 +72,7 @@ Northwind-Bank/
 | Backend | Python, FastAPI, Uvicorn | API and application server |
 | Frontend | HTML, CSS, JavaScript | Browser-based user interface |
 | Orchestration | LangGraph | Stateful RAG workflow with guardrail nodes |
-| LLM | Amazon Bedrock — Nova Lite | Response generation |
+| LLM | Amazon Bedrock — Nova 2 Lite | Response generation |
 | Embeddings | Amazon Bedrock — Titan Text Embeddings V2 | Document and query vectors (1,024 dimensions) |
 | Vector database | Pinecone | Semantic retrieval over document chunks |
 | Object storage | Amazon S3 | Original documents, presigned upload |
