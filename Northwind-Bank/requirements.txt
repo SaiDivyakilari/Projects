@@ -1,0 +1,28 @@
+# web 
+fastapi==0.115.12 # for building web applications
+uvicorn[standard]==0.34.2 # for running FastAPI applications
+jinja2==3.1.6 # for templating
+pydantic-settings==2.8.1 # for settings management
+python-dotenv==1.0.1 # for loading environment variables
+httpx==0.28.1 # for making HTTP requests
+
+#  aws 
+boto3 # to access AWS services, we need to provide AWS credentials
+
+#  data
+psycopg[binary,pool]==3.2.6 # for PostgreSQL database access
+
+#  document parsing 
+pdfplumber==0.11.4 # for PDF text extraction
+pypdf==5.4.0 # for PDF text extraction
+python-docx==1.1.2 # for Word document text extraction
+
+
+# rag / orchestration 
+langgraph>=1.2.11,<1.3 # for building and orchestrating AI agents
+langchain-core # for building AI applications with LangChain
+langchain-aws # for AWS integrations with LangChain
+pinecone>=5,<9 # for vector database operations
+
+# observability & evals
+langsmith # for observability and evaluation

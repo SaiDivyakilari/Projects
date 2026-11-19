@@ -1,0 +1,24 @@
+# virtual environments
+.venv/
+prod_rag/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# aws
+*.pem
+
+# os / onedrive
+desktop.ini
+Thumbs.db
+.DS_Store
